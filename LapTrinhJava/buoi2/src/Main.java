@@ -91,23 +91,60 @@ public class Main {
 //                System.out.println("Bình thường");
 //        }
 
-        Scanner scan = new Scanner(System.in);
-//        int a, b;
-        System.out.print("nhap vào a: ");
-        int a = scan.nextInt();
+//        Scanner scan = new Scanner(System.in);
+////        int a, b;
+//        System.out.print("nhap vào a: ");
+//        int a = scan.nextInt();
+//
+//        System.out.print("nhap vào b: ");
+//        int b = scan.nextInt();
+//
+//        if (a == 0) {
+//            if (b == 0) {
+//                System.out.println("pt ax + b = 0 co vo so nghiem");
+//            } else {
+//                System.out.println("pt vo nghiem");
+//            }
+//        } else {
+//            System.out.println("pt co nghiem x = " + (a/b));
+//        }
 
-        System.out.print("nhap vào b: ");
-        int b = scan.nextInt();
+        int i = 1, j = 1;
+//        int a =   i++ + ++i - i-- - --i;
+////                 1 +   3  - 3   - 1
+//
+//        System.out.println("a = " + a);
+//        System.out.println("i = " + i);
+//        System.out.println("j = " + j);
 
-        if (a == 0) {
-            if (b == 0) {
-                System.out.println("pt ax + b = 0 co vo so nghiem");
-            } else {
-                System.out.println("pt vo nghiem");
-            }
-        } else {
-            System.out.println("pt co nghiem x = " + (a/b));
+        if (i == j || i == j++) {
+
         }
+
+//        System.out.print(i);
+//        System.out.print(j);
+//        int a =3, b = 7;
+//        int c = a + b;
+//        System.out.printf("c = %d + %d = %d", a, b, c);
+//        System.out.println("\nc = " + a + " + " + b + " = " + c);
+        Scanner scan = new Scanner(System.in);
+        int age;
+
+        do {
+            System.out.print("Nhập vào tuổi: ");
+            age = scan.nextInt();
+            if (age < 0) {
+                System.out.println("ban da nhap sai, vui long nhap lai!");
+            }
+        } while (age < 0);
+
+        scan.nextLine();
+
+        System.out.print("Nhập vào tên: ");
+        String name = scan.nextLine();
+
+        System.out.println("Tuổi: " + age);
+        System.out.println("Tên: " + name);
 
 
 
