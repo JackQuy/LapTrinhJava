@@ -11,31 +11,32 @@ public class Bai7 {
     public static boolean gioiTinh[] = new boolean[m];
     public static int mucLuong[] = new int[m];
     public static float diemTB[] = new float[m];
-    public static void nhapTT(int k){
+
+    public static void nhapTT(int k) {
         Scanner sc = new Scanner(System.in);
         System.out.println();
-        System.out.println("Nhap hoten nhan vien thu "+k);
+        System.out.println("Nhap hoten nhan vien thu " + k);
         hoTen[k] = sc.nextLine();
 
-        System.out.println("Nhap tuoi nhan vien thu "+k);
+        System.out.println("Nhap tuoi nhan vien thu " + k);
         tuoi[k] = sc.nextInt();
 
-        System.out.println("Nhap gioi tinh : nam(true) hoac nu(false) cua nhan vien thu "+k);
+        System.out.println("Nhap gioi tinh : nam(true) hoac nu(false) cua nhan vien thu " + k);
         gioiTinh[k] = sc.nextBoolean();
 
-        System.out.println("Nhap vao muc luong nhan vien thu "+k);
+        System.out.println("Nhap vao muc luong nhan vien thu " + k);
         mucLuong[k] = sc.nextInt();
 
-        System.out.println("Nhap vao diemTB cua nhan vien thu "+k);
+        System.out.println("Nhap vao diemTB cua nhan vien thu " + k);
         diemTB[k] = sc.nextFloat();
 
     }
 
-    public static int findTBMax(float a[]){
+    public static int findTBMax(float a[]) {
         float lonNhat = a[0];
         int viTri = 0;
-        for(int i=1; i<a.length; i++){
-            if(lonNhat < a[i]){
+        for (int i = 1; i < a.length; i++) {
+            if (lonNhat < a[i]) {
                 lonNhat = a[i];
                 viTri = i;
             }
@@ -44,12 +45,12 @@ public class Bai7 {
         return viTri;
     }
 
-    public static int findTBMax2(float a[]){
+    public static int findTBMax2(float a[]) {
         float lonNhi = -1;
-        int viTri= -1;
+        int viTri = -1;
         int lonNhat = findTBMax(a);
-        for (int i = 0; i<a.length; i++){
-            if(lonNhi<a[lonNhat] && lonNhi<a[i]){
+        for (int i = 0; i < a.length; i++) {
+            if (lonNhi < a[i] && a[i] != a[lonNhat]) {
                 lonNhi = a[i];
                 viTri = i;
             }
@@ -58,7 +59,38 @@ public class Bai7 {
         return viTri;
     }
 
+    public static void findNhanVien1(String hoTen[]) {
+        Scanner sc = new Scanner(System.in);
+        String ten = new String();
+        System.out.println("Nhap vao ten can tim thong tin");
+        ten = sc.nextLine();
+        for (int i = 0; i < hoTen.length; i++) {
+            if (hoTen[i].equals(ten)) {
+                System.out.println("Ho va ten: " + hoTen[i]);
+                System.out.println("Gioi tinh: " + gioiTinh[i]);
+                System.out.println("Muc luong: " + mucLuong[i]);
+                System.out.println("Diem Tb: " + diemTB[i]);
 
+            }
+        }
+    }
+
+    public static void findNhanVien2(String hoTen[]) {
+        // ko can chinh xac hoan toan ho ten
+        Scanner sc = new Scanner(System.in);
+        String ten = new String();
+        System.out.println("Nhap vao ten can tim thong tin");
+        ten = sc.nextLine();
+        for (int i = 0; i < hoTen.length; i++) {
+            if (hoTen[i].equals(ten)) {
+                System.out.println("Ho va ten: " + hoTen[i]);
+                System.out.println("Gioi tinh: " + gioiTinh[i]);
+                System.out.println("Muc luong: " + mucLuong[i]);
+                System.out.println("Diem Tb: " + diemTB[i]);
+
+            }
+        }
+    }
 
 
     public static void main(String[] args) {
@@ -67,7 +99,7 @@ public class Bai7 {
         System.out.println("Nhap vao so luong nhan vien");
         n = sc.nextInt();
 
-        for(int i=0; i<n; i++)
+        for (int i = 0; i < n; i++)
             nhapTT(i);
         System.out.println();
 
@@ -76,7 +108,6 @@ public class Bai7 {
 
         System.out.println("Nhan vien co diemTB cao nhi");
         System.out.println(hoTen[findTBMax2(diemTB)]);
-
 
 
     }
